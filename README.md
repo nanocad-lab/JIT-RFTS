@@ -1,12 +1,11 @@
-## JIT-RFTS: An Reliability-Bookkeeping Kernel Module for
+# JIT-RFTS: An Reliability-Bookkeeping Kernel Module for
 BeagleBone Black
 
-Build Instruction:
+##Build Instruction:
 
 1. The setup is verified with a Ubuntu 12.04 machine. Special modifications may be required for other versions.
 
-2. Download and install the TI AM335x SDK. You can find the binary file from: 
-http://software-dl.ti.com/sitara_linux/esd/AM335xSDK/07_00_00_00/exports/ti-sdk-am335x-evm-07.00.00.00-Linux-x86-Install.bin
+2. Download and install the TI AM335x SDK. 
 
 ```
 wget http://software-dl.ti.com/sitara_linux/esd/AM335xSDK/07_00_00_00/exports/ti-sdk-am335x-evm-07.00.00.00-Linux-x86-Install.bin
