@@ -1,5 +1,4 @@
-# JIT-RFTS: An Reliability-Bookkeeping Kernel Module for
-BeagleBone Black
+# JIT-RFTS: An Reliability-Bookkeeping Kernel Module for BeagleBone Black
 
 ##Build Instruction:
 
@@ -37,4 +36,9 @@ Save an alternate config file: .config
 ```
 ./compile.sh
 ```
+
+The I/O of the kernel module is done through sysfs interface.
+The virtual files are located in:
+
+/sys/devices/system/cpu/cpu0/cpufreq/re_stats/
 
