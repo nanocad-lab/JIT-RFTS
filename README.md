@@ -2,37 +2,32 @@
 
 ## Build Instructions:
 
-1. The setup is with a Ubuntu 12.04 host machine. Special modifications may be required for other OS versions.
-2. Download and install the TI AM335x SDK. 
+### Install TI SDK
 
-  ```
-  wget http://software-dl.ti.com/sitara_linux/esd/AM335xSDK/07_00_00_00/exports/ti-sdk-am335x-evm-07.00.00.00-Linux-x86-Install.bin
-  chmod +x ti-sdk-am335x-evm-07.00.00.00-Linux-x86-Install.bin
-  ./ti-sdk-am335x-evm-07.00.00.00-Linux-x86-Install.bin
-  ```
-3. Follow the GUI to install the SDK.
-4. Follow the documentation to setup your BeagleBone Black.
-5. Apply the patches by copying the files.
+* The setup is with a Ubuntu 12.04 host machine. Special modifications may be required for other OS versions.
+* Download and install the TI AM335x SDK. 
+<pre>
+wget http://software-dl.ti.com/sitara_linux/esd/AM335xSDK/07_00_00_00/exports/ti-sdk-am335x-evm-07.00.00.00-Linux-x86-Install.bin
+chmod +x ti-sdk-am335x-evm-07.00.00.00-Linux-x86-Install.bin
+./ti-sdk-am335x-evm-07.00.00.00-Linux-x86-Install.bin
+</pre>
+* Follow the GUI to install the SDK
+* Follow the documentation to setup your BeagleBone Black (boot option, TFTP etc.)
 
-  ```
-  cp -r ./kernel_module/* {sdk_install_path}/board-support/linux-3.12.10-ti2013.12.01/
-  ```
-6. Config the kernel
+### Import JIT-RFTS kernel extensions
 
-  ```
-  cd {sdk_install_path}/board-support/linux-3.12.10-ti2013.12.01/
-  make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- menuconfig
-  Load an alternate config file, select ./config_default
-  Save an alternate config file: .config
-  ```
-7. Build the kernel image
-
-  ```
-  ./compile.sh
-  ```
-
-The I/O of the kernel module is done through sysfs interface.
-The virtual files are located in:
-
-/sys/devices/system/cpu/cpu0/cpufreq/re_stats/
-
+* Copy JIT-RFTS kernel extensions to the kernel code
+<pre>
+cp -r ./kernel_module/* {sdk_install_path}/board-support/linux-3.12.10-ti2013.12.01/
+</pre>
+* Configure Linux kernel for BeagleBone Black
+<pre>
+cd {sdk_install_path}/board-support/linux-3.12.10-ti2013.12.01/
+make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- menuconfig
+</pre>
+* Load an alternate config file, select ./config_default
+* Save an alternate config file: .config
+* Build the kernel image
+<pre>
+./compile.sh
+</pre>
