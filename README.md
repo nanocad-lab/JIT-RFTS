@@ -12,7 +12,7 @@ chmod +x ti-sdk-am335x-evm-07.00.00.00-Linux-x86-Install.bin
 ./ti-sdk-am335x-evm-07.00.00.00-Linux-x86-Install.bin
 </pre>
 * Follow the GUI to install the SDK
-* Follow the documentation to setup your BeagleBone Black (boot option, TFTP etc.)
+* Follow the documentation to setup your BeagleBone Black (boot option, TFTP, cross-compilation etc.)
 
 ### Import JIT-RFTS kernel extensions
 
